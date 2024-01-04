@@ -16,14 +16,17 @@ import {Observable} from "rxjs";
 })
 export class PostsComponent implements OnInit{
 
+    loading = true
+
     posts!: Post[];
 
     constructor(private readonly _service: PostService) {
     }
 
   ngOnInit() {
-    this._service.getAll().subscribe(
-      value => this.posts = value
-    );
+    this._service.getAll().subscribe({
+      next: (value) => this.posts=value,
+      complete: () => this.loading=false
+    });
   }
 }

@@ -1,3 +1,15 @@
-<div>
-  <p>{{posts|json}}</p>
-</div>
+@if (loading){
+  <h1>JE CHHHHHHAAAAAAAAAARGE</h1>
+} @else {
+
+  @for(post of posts; track post.id){
+    <tr>
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+    </tr>
+
+  } @empty {
+    <p>J'ai rien trouvé parce que c'est vide</p>
+  }
+
+}

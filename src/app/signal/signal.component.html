@@ -1,0 +1,24 @@
+<div class="posts">
+  <table>
+    <thead>
+    <tr>
+      <th>id:</th>
+      <th>userId:</th>
+      <th>title:</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (post of nonWritableSignal(); track post.id){
+        <tr>
+          <td>{{ post.id }}</td>
+          <td>{{ post.userId }}</td>
+          <td>{{ post.title }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  {{writableSignal()}}
+  <button (click)="setSignal()">Set</button>
+  <button (click)="updateSignal()">update</button>
+</div>

@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {PostService} from "./post.service";
+import {PostService} from "../post.service";
 import {AsyncPipe, JsonPipe} from "@angular/common";
-import {Post} from "./post";
+import {Post} from "../post";
 import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
+import {takeLast} from "rxjs";
 
 @Component({
   selector: 'app-posts',
@@ -11,7 +13,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     AsyncPipe,
     JsonPipe,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css'

@@ -1,7 +1,8 @@
 import {Component, computed, effect, Signal, signal} from '@angular/core';
-import {Post} from "../posts/post";
+import {Post} from "../post";
 import {toSignal} from "@angular/core/rxjs-interop";
-import {PostService} from "../posts/post.service";
+import {PostService} from "../post.service";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-signal',

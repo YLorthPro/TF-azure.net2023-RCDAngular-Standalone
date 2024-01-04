@@ -13,6 +13,16 @@ import {map} from "rxjs";
 })
 export class SignalComponent {
 
+  /*
+   Signal: Valeur réactive, capable d’avertir ses dépendances de son changement.
+
+   Deux types:
+   - Writable Signals: singaux qui peuvent être modifiés.
+   - Computed Signals: tirent leur valeur d’autres signaux => lecture seule.
+
+
+  */
+
   posts?:Post[];
 
   writableSignal  = signal("Coucou");
@@ -25,8 +35,12 @@ export class SignalComponent {
       this.posts = this.nonWritableSignal();
     })
 
-    //effect pour exécuter du code en réponse à des modifications de dépendances réactives
+    /*
+    effect pour exécuter du code en réponse à des modifications de dépendances réactives
+    Est automatiquement planifiée pour être exécutée chaque fois que la valeur de l’un des signaux change
+     */
     effect(()=>{
+        console.log(this.writableSignal())
         console.log("Changement")
       }
     )

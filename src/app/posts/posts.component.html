@@ -14,25 +14,30 @@
 
 }
 
-<form>
-  <label>
-    <input type="radio" name="color" [(ngModel)]="couleur" value="bleu">
-    Red
-  </label>
-  <label>
-    <input type="radio" name="color" [(ngModel)]="couleur" value="rouge">
-    Green
-  </label>
-  <label>
-    <input type="radio" name="color" [(ngModel)]="couleur" value="chartreuse">
-    Blue
-  </label>
-</form>
+<div style="margin-top: 10vh">
+  <form>
+    <label>
+      <input type="radio" name="color" [(ngModel)]="couleur" value="bleu">
+      Bleu
+    </label>
+    <label>
+      <input type="radio" name="color" [(ngModel)]="couleur" value="rouge">
+      Rouge
+    </label>
+    <label>
+      <input type="radio" name="color" [(ngModel)]="couleur" value="chartreuse">
+      The best one
+    </label>
+  </form>
 
-@switch (couleur){
-  @case ("bleu") {<h3>C'est bleu</h3>}
-  @case ("rouge") {<h3>C'est rouge</h3>}
-  @default {
-    <h2>Chartreuse!!!!!</h2>
+  @switch (couleur){
+    @case ("bleu") {<h3>C'est bleu</h3>}
+    @case ("rouge") {<h3>C'est rouge</h3>}
+    @default {
+      <h2>Chartreuse!!!!!</h2>
+    }
   }
-}
+</div>
+
+
+
